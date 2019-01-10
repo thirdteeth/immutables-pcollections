@@ -12,7 +12,7 @@
   <packaging>pom</packaging>
   <name>pcollections</name>
   <description>Immutables.org encodings for pcollections</description>
-  <url>https://github.com/damonpu/immutables-pcollections</url>
+  <url>https://github.com/thirdteeth/immutables-pcollections</url>
 
   <modules>
     <module>pcollections-checkstyle</module>
@@ -27,10 +27,18 @@
   </properties>
 
   <scm>
-    <url>https://github.com/damonpu/immutables-pcollections</url>
-    <connection>scm:git:https://github.com/damonpu/immutables-pcollections</connection>
-    <developerConnection>scm:git:https://github.com/damonpu/immutables-pcollections</developerConnection>
+    <url>https://github.com/thirdteeth/immutables-pcollections</url>
+    <connection>scm:git:https://github.com/thirdteeth/immutables-pcollections</connection>
+    <developerConnection>scm:git:https://github.com/thirdteeth/immutables-pcollections</developerConnection>
   </scm>
+
+  <developers>
+    <developer>
+      <id>damonpu</id>
+      <name>Damon Pu</name>
+      <email>damonpu@outlook.com</email>
+    </developer>
+  </developers>
 
   <licenses>
     <license>
@@ -42,7 +50,7 @@
   </licenses>
 
   <issueManagement>
-    <url>https://github.com/damonpu/immutables-pcollections/issues</url>
+    <url>https://github.com/thirdteeth/immutables-pcollections/issues</url>
     <system>GitHub Issues</system>
   </issueManagement>
 
@@ -50,7 +58,7 @@
     <site>
       <id>GitHub</id>
       <name>GitHub</name>
-      <url>https://github.com/damonpu/immutables-pcollections</url>
+      <url>https://github.com/thirdteeth/immutables-pcollections</url>
     </site>
     <repository>
       <id>sonatype-nexus-staging</id>
