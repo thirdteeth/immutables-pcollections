@@ -3,6 +3,16 @@ immutables-pcollections
 
 A set of [Immutables](http://immutables.org) encodings for [PCollections](https://pcollections.org/).
 
+Include the encodings in your project:
+
+```
+<dependency>
+  <groupId>com.github.thirdteeth</groupId>
+  <artifactId>pcollections-encodings</artifactId>
+  <version>0.1.0</version>
+</dependency>
+
+```
 
 Annotate your types with `@PCollectionsEncodingEnabled`. Alternatively,
 you can annotate a `@Style` annotation with `@PCollectionsEncodingEnabled`
