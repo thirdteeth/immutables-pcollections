@@ -8,7 +8,7 @@ pipeline {
     stage('BuildAndTest') {
       agent { label 'linux' }
       tools {
-        jdk   'openjdk-9-hotspot'
+        jdk   'openjdk-8'
         maven 'maven-3.5.3'
       }
       steps {
