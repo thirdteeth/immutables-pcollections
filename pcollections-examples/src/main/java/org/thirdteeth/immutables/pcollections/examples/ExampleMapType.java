@@ -12,19 +12,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.thirdteeth.immutables.pcollections.encodings;
+
+package org.thirdteeth.immutables.pcollections.examples;
+
+import org.immutables.value.Value;
+import org.pcollections.PMap;
+import org.thirdteeth.immutables.pcollections.encodings.PCollectionsMapEncodingsEnabled;
+
+import java.util.Map;
 
 /**
- * The top level meta annotation.
+ * An example with {@link PMap}.
  */
 
-@PCollectionsPMapEncodingsEnabled
-@PCollectionsPVectorEncodingsEnabled
-@PCollectionsPSetEncodingEnabled
-@PCollectionsPStackEncodingsEnabled
-@PCollectionsPBagEncodingEnabled
+@Value.Immutable
 @PCollectionsMapEncodingsEnabled
-@PCollectionsSetEncodingEnabled
-@PCollectionsListEncodingsEnabled
-public @interface PCollectionsEncodingEnabled {
+public interface ExampleMapType
+{
+  /**
+   * @return Some data
+   */
+
+  Map<String, Integer> integers();
 }

@@ -12,19 +12,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.thirdteeth.immutables.pcollections.encodings;
+
+package org.thirdteeth.immutables.pcollections.examples;
+
+import org.immutables.value.Value;
+import org.pcollections.PSet;
+import org.thirdteeth.immutables.pcollections.encodings.PCollectionsSetEncodingEnabled;
+
+import java.util.Set;
+
 
 /**
- * The top level meta annotation.
+ * An example with {@link PSet}.
  */
 
-@PCollectionsPMapEncodingsEnabled
-@PCollectionsPVectorEncodingsEnabled
-@PCollectionsPSetEncodingEnabled
-@PCollectionsPStackEncodingsEnabled
-@PCollectionsPBagEncodingEnabled
-@PCollectionsMapEncodingsEnabled
+@Value.Immutable
 @PCollectionsSetEncodingEnabled
-@PCollectionsListEncodingsEnabled
-public @interface PCollectionsEncodingEnabled {
+public interface ExampleSetType
+{
+  /**
+   * @return Some data
+   */
+
+  Set<Integer> integers();
 }
