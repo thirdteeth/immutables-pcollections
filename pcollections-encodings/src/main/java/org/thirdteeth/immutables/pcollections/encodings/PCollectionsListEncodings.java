@@ -17,6 +17,11 @@ class PCollectionsListEncodings<T> {
 
     }
 
+    @Encoding.Copy
+    List<T> with(final List<T> list) {
+        return TreePVector.from(list);
+    }
+
     @Encoding.Builder
     static final class Builder<T>
     {

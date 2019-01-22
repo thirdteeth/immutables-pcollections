@@ -16,6 +16,11 @@ class PCollectionsMapEncodings<K, V> {
 
     }
 
+    @Encoding.Copy
+    Map<K, V> with(final Map<K, V> map) {
+        return HashTreePMap.from(map);
+    }
+
     @Encoding.Builder
     static final class Builder<K, V> {
         private Map<K, V> pmap = HashTreePMap.empty();
