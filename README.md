@@ -9,7 +9,7 @@ Include the encodings in your project:
 <dependency>
   <groupId>com.github.thirdteeth</groupId>
   <artifactId>pcollections-encodings</artifactId>
-  <version>0.1.1</version>
+  <version>0.1.2</version>
 </dependency>
 
 ```
