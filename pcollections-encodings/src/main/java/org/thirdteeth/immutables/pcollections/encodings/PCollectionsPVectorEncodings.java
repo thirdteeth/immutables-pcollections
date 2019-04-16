@@ -17,6 +17,17 @@ class PCollectionsPVectorEncodings<T> {
 
     }
 
+    @Encoding.Copy
+    PVector<T> with(final PVector<T> list) {
+        return TreePVector.from(list);
+    }
+
+    @Encoding.Copy
+    @Encoding.Naming(value = "with*")
+    PVector<T> withCollection(final Collection<T> list) {
+        return TreePVector.from(list);
+    }
+
     @Encoding.Builder
     static final class Builder<T>
     {

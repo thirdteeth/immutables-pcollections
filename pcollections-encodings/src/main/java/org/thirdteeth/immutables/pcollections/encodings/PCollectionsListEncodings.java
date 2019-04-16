@@ -22,10 +22,16 @@ class PCollectionsListEncodings<T> {
         return TreePVector.from(list);
     }
 
+    @Encoding.Copy
+    @Encoding.Naming(value = "with*")
+    List<T> withCollection(final Collection<T> list) {
+        return TreePVector.from(list);
+    }
+
     @Encoding.Builder
     static final class Builder<T>
     {
-        private List<T> list = TreePVector.empty();
+        private PVector<T> list = TreePVector.empty();
 
         Builder() {
 
@@ -34,20 +40,20 @@ class PCollectionsListEncodings<T> {
         @Encoding.Naming(standard = Encoding.StandardNaming.ADD)
         @Encoding.Init
         void add(final T element) {
-            this.list = ((PVector) this.list).plus(element);
+            this.list = this.list.plus(element);
         }
 
         @SafeVarargs
         @Encoding.Naming(standard = Encoding.StandardNaming.ADD)
         @Encoding.Init
         final void addVarArgs(final T... elements) {
-            this.list = ((PVector) this.list).plusAll(Arrays.asList(elements));
+            this.list = this.list.plusAll(Arrays.asList(elements));
         }
 
         @Encoding.Naming(standard = Encoding.StandardNaming.ADD_ALL)
         @Encoding.Init
         void addAll(final Collection<T> element) {
-            this.list = ((PVector) this.list).plusAll(element);
+            this.list = this.list.plusAll(element);
         }
 
         @Encoding.Init

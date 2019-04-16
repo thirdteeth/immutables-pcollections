@@ -18,6 +18,17 @@ class PCollectionsPSetEncoding<T> {
 
     }
 
+    @Encoding.Copy
+    PSet<T> with(final PSet<T> set) {
+        return HashTreePSet.from(set);
+    }
+
+    @Encoding.Copy
+    @Encoding.Naming(value = "with*")
+    PSet<T> withCollection(final Collection<T> set) {
+        return HashTreePSet.from(set);
+    }
+
     @Encoding.Builder
     static final class Builder<T> {
         private PSet<T> set = HashTreePSet.empty();

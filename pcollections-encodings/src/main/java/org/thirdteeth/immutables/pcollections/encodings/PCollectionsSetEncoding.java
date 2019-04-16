@@ -23,6 +23,12 @@ class PCollectionsSetEncoding<T> {
         return HashTreePSet.from(set);
     }
 
+    @Encoding.Copy
+    @Encoding.Naming(value = "with*")
+    Set<T> withCollection(final Collection<T> set) {
+        return HashTreePSet.from(set);
+    }
+
     @Encoding.Builder
     static final class Builder<T> {
         private Set<T> set = HashTreePSet.empty();

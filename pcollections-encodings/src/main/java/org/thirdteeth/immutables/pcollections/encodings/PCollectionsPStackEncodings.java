@@ -17,6 +17,17 @@ class PCollectionsPStackEncodings<T> {
 
     }
 
+    @Encoding.Copy
+    PStack<T> with(final PStack<T> list) {
+        return ConsPStack.from(list);
+    }
+
+    @Encoding.Copy
+    @Encoding.Naming(value = "with*")
+    PStack<T> withCollection(final Collection<T> list) {
+        return ConsPStack.from(list);
+    }
+
     @Encoding.Builder
     static final class Builder<T>
     {

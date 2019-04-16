@@ -18,6 +18,17 @@ class PCollectionsPBagEncoding<T> {
 
     }
 
+    @Encoding.Copy
+    PBag<T> with(final PBag<T> list) {
+        return HashTreePBag.from(list);
+    }
+
+    @Encoding.Copy
+    @Encoding.Naming(value = "with*")
+    PBag<T> withCollection(final Collection<T> list) {
+        return HashTreePBag.from(list);
+    }
+
     @Encoding.Builder
     static final class Builder<T> {
         private PBag<T> bag = HashTreePBag.empty();
