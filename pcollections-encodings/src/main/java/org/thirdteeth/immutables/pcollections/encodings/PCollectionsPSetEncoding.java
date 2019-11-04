@@ -47,25 +47,33 @@ class PCollectionsPSetEncoding<T> {
         @Encoding.Naming(standard = Encoding.StandardNaming.ADD)
         @Encoding.Init
         final void addVarArgs(final T... elements) {
-            this.set = this.set.plusAll(Arrays.asList(elements));
+            if (elements != null && elements.length > 0) {
+                this.set = this.set.plusAll(Arrays.asList(elements));
+            }
         }
 
         @Encoding.Naming(standard = Encoding.StandardNaming.ADD_ALL)
         @Encoding.Init
         void addAll(final Collection<T> element) {
-            this.set = this.set.plusAll(element);
+            if (element != null && !element.isEmpty()) {
+                this.set = this.set.plusAll(element);
+            }
         }
 
         @Encoding.Naming(value = "setJavaSet*")
         @Encoding.Init
         void setJavaSet(final Set<T> in_set) {
-            this.set = HashTreePSet.from(in_set);
+            if (in_set != null && !in_set.isEmpty()) {
+                this.set = HashTreePSet.from(in_set);
+            }
         }
 
         @Encoding.Init
         @Encoding.Copy
         void set(final PSet<T> elements) {
-            this.set = elements;
+            if (elements != null && !elements.isEmpty()) {
+                this.set = elements;
+            }
         }
 
 

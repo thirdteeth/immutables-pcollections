@@ -31,7 +31,7 @@ class PCollectionsListEncodings<T> {
     @Encoding.Builder
     static final class Builder<T>
     {
-        private PVector<T> list = TreePVector.empty();
+        private List<T> list = TreePVector.empty();
 
         Builder() {
 
@@ -40,32 +40,38 @@ class PCollectionsListEncodings<T> {
         @Encoding.Naming(standard = Encoding.StandardNaming.ADD)
         @Encoding.Init
         void add(final T element) {
-            this.list = this.list.plus(element);
+            this.list = ((PVector<T>) this.list).plus(element);
         }
 
         @SafeVarargs
         @Encoding.Naming(standard = Encoding.StandardNaming.ADD)
         @Encoding.Init
         final void addVarArgs(final T... elements) {
-            this.list = this.list.plusAll(Arrays.asList(elements));
+            this.list = ((PVector<T>) this.list).plusAll(Arrays.asList(elements));
         }
 
         @Encoding.Naming(standard = Encoding.StandardNaming.ADD_ALL)
         @Encoding.Init
-        void addAll(final Collection<T> element) {
-            this.list = this.list.plusAll(element);
+        void addAll(final Collection<T> elements) {
+            if (elements != null && !elements.isEmpty()) {
+                this.list = ((PVector<T>) this.list).plusAll(elements);
+            }
         }
 
         @Encoding.Init
         @Encoding.Copy
         void set(final List<T> in_list) {
-            this.list = TreePVector.from(in_list);
+            if (in_list != null && !in_list.isEmpty()) {
+                this.list = TreePVector.from(in_list);
+            }
         }
 
         @Encoding.Init
         @Encoding.Naming(value = "setPVector*")
         void setPVector(final PVector<T> elements) {
-            this.list = elements;
+            if (elements != null && !elements.isEmpty()) {
+                this.list = elements;
+            }
         }
 
         @Encoding.Build

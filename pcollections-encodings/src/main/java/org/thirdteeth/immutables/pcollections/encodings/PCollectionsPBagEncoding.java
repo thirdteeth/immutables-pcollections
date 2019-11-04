@@ -47,25 +47,33 @@ class PCollectionsPBagEncoding<T> {
         @Encoding.Naming(standard = Encoding.StandardNaming.ADD)
         @Encoding.Init
         final void addVarArgs(final T... elements) {
-            this.bag = this.bag.plusAll(Arrays.asList(elements));
+            if (elements != null && elements.length > 0) {
+                this.bag = this.bag.plusAll(Arrays.asList(elements));
+            }
         }
 
         @Encoding.Naming(standard = Encoding.StandardNaming.ADD_ALL)
         @Encoding.Init
         void addAll(final Collection<T> element) {
-            this.bag = this.bag.plusAll(element);
+            if (element != null && !element.isEmpty()) {
+                this.bag = this.bag.plusAll(element);
+            }
         }
 
         @Encoding.Naming(value = "setJavaSet*")
         @Encoding.Init
         void setJavaSet(final Set<T> in_set) {
-            this.bag = HashTreePBag.from(in_set);
+            if (in_set != null && !in_set.isEmpty()) {
+                this.bag = HashTreePBag.from(in_set);
+            }
         }
 
         @Encoding.Init
         @Encoding.Copy
         void set(final PBag<T> elements) {
-            this.bag = elements;
+            if (elements != null && !elements.isEmpty()) {
+                this.bag = elements;
+            }
         }
 
 

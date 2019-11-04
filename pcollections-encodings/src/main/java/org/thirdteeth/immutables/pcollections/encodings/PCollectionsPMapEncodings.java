@@ -33,19 +33,25 @@ class PCollectionsPMapEncodings<K, V> {
         @Encoding.Init
         @Encoding.Copy
         void set(final PMap<K, V> elements) {
-            this.pmap = elements;
+            if (elements != null && !elements.isEmpty()) {
+                this.pmap = elements;
+            }
         }
 
         @Encoding.Naming(value = "setJavaMap*")
         @Encoding.Init
         void setJavaMap(final Map<K, V> in_map) {
-            this.pmap = HashTreePMap.from(in_map);
+            if (in_map != null && !in_map.isEmpty()) {
+                this.pmap = HashTreePMap.from(in_map);
+            }
         }
 
         @Encoding.Naming(standard = Encoding.StandardNaming.PUT_ALL)
         @Encoding.Init
         void putAll(final Map<K, V> map) {
-            this.pmap = this.pmap.plusAll(map);
+            if (map != null && !map.isEmpty()) {
+                this.pmap = this.pmap.plusAll(map);
+            }
         }
 
         @Encoding.Build
