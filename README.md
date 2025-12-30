@@ -24,6 +24,4 @@ abstract value types will magically result in the generated `Builder`
 types being augmented with methods to build immutable collections
 element-by-element.
 
-> [!TIP]
-> - Free VPS
-> - <a href="https://dartnode.com?aff=SnappyPigeon570"><img src="https://dartnode.com/branding/DN-Open-Source-sm.png" alt="Powered by DartNode - Free VPS for Open Source" width="320"></a>
+[![Powered by DartNode](https://dartnode.com/branding/DN-Open-Source-sm.png)](https://dartnode.com "Powered by DartNode - Free VPS for Open Source")
