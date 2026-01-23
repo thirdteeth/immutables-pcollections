@@ -23,5 +23,3 @@ Now, any use of [PCollections](https://pcollections.org/) collections in your
 abstract value types will magically result in the generated `Builder`
 types being augmented with methods to build immutable collections
 element-by-element.
-
-[![Powered by DartNode](https://dartnode.com/branding/DN-Open-Source-sm.png)](https://dartnode.com "Powered by DartNode - Free VPS for Open Source")
